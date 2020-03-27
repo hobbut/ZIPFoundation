@@ -174,13 +174,14 @@ public struct Entry: Equatable {
         size += self.dataDescriptor != nil ? DataDescriptor.size : 0
         return size
     }
-    var dataOffset: Int {
+    public var dataOffset: Int {
         var dataOffset = Int(self.centralDirectoryStructure.relativeOffsetOfLocalHeader)
         dataOffset += LocalFileHeader.size
         dataOffset += Int(self.localFileHeader.fileNameLength)
         dataOffset += Int(self.localFileHeader.extraFieldLength)
         return dataOffset
     }
+    
     let centralDirectoryStructure: CentralDirectoryStructure
     let localFileHeader: LocalFileHeader
     let dataDescriptor: DataDescriptor?
