@@ -6,7 +6,7 @@
 build/
 DerivedData/
 *.xcodeproj
-.idea
+.idea/
 
 ## Various settings
 *.pbxuser
